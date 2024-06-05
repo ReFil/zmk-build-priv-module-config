@@ -23,6 +23,9 @@ on:
         default: "firmware"
         required: false
         type: string
+    secrets:
+        SSH_KEY:
+          required: true
 
 jobs:
   matrix:
