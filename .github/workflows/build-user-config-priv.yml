@@ -58,13 +58,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Authenticate1
-        uses: webfactory/ssh-agent@v0.9.0
+      - name: Authenticate
+        uses: webfactory/ssh-agent@v0.7.0
         with:
             ssh-private-key: ${{ secrets.SSH_KEY }}
-            
-      - name: Authenticate2
-        run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
       - name: Create build directory
         run: |
