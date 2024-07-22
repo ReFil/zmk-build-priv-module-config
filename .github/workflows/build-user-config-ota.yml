@@ -158,6 +158,7 @@ jobs:
           if [ -f "${{ env.build_dir }}/zephyr/zmk.uf2" ]
           then
             cp "${{ env.build_dir }}/zephyr/zmk.uf2" "${{ env.build_dir }}/artifacts/${{ env.artifact_name }}.uf2"
+          fi
           if [ -f "${{ env.build_dir }}/zephyr/zmk.${{ inputs.additional_binary }}" ]
           then
             cp "${{ env.build_dir }}/zephyr/zmk.${{ inputs.additional_binary }}" "${{ env.build_dir }}/artifacts/${{ env.artifact_name }}.${{ inputs.additional_binary }}"
