@@ -26,7 +26,7 @@ on:
 
 jobs:
   matrix:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     name: Fetch Build Keyboards
     outputs:
       build_matrix: ${{ env.build_matrix }}
@@ -43,7 +43,7 @@ jobs:
           yaml2json "${{ inputs.build_matrix_path }}" | jq
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container:
       image: zmkfirmware/zmk-build-arm:stable
     needs: matrix
@@ -171,7 +171,7 @@ jobs:
           path: ${{ env.build_dir }}/artifacts
 
   merge:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build
     name: Merge Output Artifacts
     steps:
